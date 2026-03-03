@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>体征监护系统 - 项目详情</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#7c3aed',
+                        dark: '#0f172a'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .tech-tag {
+            transition: all 0.3s ease;
+        }
+        .tech-tag:hover {
+            transform: translateY(-2px);
+        }
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- 导航栏 -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-dark">贺佳伟</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="./index.html#portfolio" class="text-gray-700 hover:text-primary transition-colors">作品集</a>
+                    <a href="./index.html#about" class="text-gray-700 hover:text-primary transition-colors">关于</a>
+                    <a href="./index.html#contact" class="text-gray-700 hover:text-primary transition-colors">联系</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 项目详情头部 -->
+    <div class="pt-20 pb-10 bg-gradient-to-r from-primary to-secondary">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div class="fade-in">
+                    <h1 class="text-3xl font-bold text-white mb-2">体征监护系统</h1>
+                    <p class="text-gray-200">
+                        基于Vue + TS开发的企业级监护数据大屏系统解决方案
+                    </p>
+                </div>
+                <div class="mt-4 md:mt-0 fade-in">
+                    <div class="bg-white bg-opacity-20 rounded-lg px-3 py-1 text-sm text-white">
+                        <i class="fas fa-calendar-alt mr-2"></i>2021 - 至今
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 项目详情主体 -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- 主内容区域 -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- 项目概述 -->
+                <div class="bg-white rounded-xl shadow-sm p-6 fade-in">
+                    <h2 class="text-2xl font-bold text-dark mb-4">项目概述</h2>
+                    <p class="text-gray-600 mb-4">
+                     为医疗专业人员提供患者呼吸状态的直观展示。部分波形数据超出了预设的刻度值范围，导致医疗专业人员无法准确获知超出阈值范围的具体数值，进而影响到临床判断与治疗决策，在进行肺保护性通气策略、处理ARDS患者、考虑撤机条件以及评估患者自主呼吸能力时，跨肺压和食道压的监测尤为重要，需自定义展示波形功能，辅助医生实现个性化的治疗方案。
+                    </p>
+                </div>
+
+                <!-- 技术实现 -->
+                <div class="bg-white rounded-xl shadow-sm p-6 fade-in">
+                    <h2 class="text-2xl font-bold text-dark mb-4">技术实现</h2>
+                    <p class="text-gray-600 mb-4">
+                      监护系统使用vue+ts搭建，结合postcss-pxtorem+amfe-flexible实现响应式页面，websocket订阅患者监护列表，mqtt订阅波形数据和报警提醒。
+                      波形趋势库开发使用ts分为，base，config，data，draw，tool，Application模块，使用Monorepo+lerna方案将组件库统一管理统一发版,解决组件库之间版本依赖出现混乱问题。
+                    </p>
+                    
+                    <h3 class="font-semibold text-dark mb-3">核心技术栈：</h3>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">TS</span>
+                        <span class="tech-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Vue3</span>
+                        <span class="tech-tag bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">websocket</span>
+                        <span class="tech-tag bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">mqtt</span>
+                        <span class="tech-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Monorepo+lerna</span>
+                    </div>
+                    
+                    <h3 class="font-semibold text-dark mb-3">核心职责：</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-dot-circle text-primary mt-1 mr-3 text-xs"></i>
+                            <span>独立完成mqtt订阅数据模块开发，实现实时波形数据展示</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-dot-circle text-primary mt-1 mr-3 text-xs"></i>
+                            <span>独立完成mqtt订阅数据模块开发，实现实时报警数据展示与异常预警</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-dot-circle text-primary mt-1 mr-3 text-xs"></i>
+                            <span>独立完成波形组件模块开发，实现实时波形数据展示</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 项目截图 -->
+                <div class="bg-white rounded-xl shadow-sm p-6 fade-in">
+                    <h2 class="text-2xl font-bold text-dark mb-4">项目展示</h2>
+                    因为企业项目，无法提供详细展示页面，仅展示部分功能截图。canvas写了一个波形趋势案例，可点击右边预览查看
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <img src="./img/1c0667fd-1c6d-4e54-92c5-aafbf2de7703.png" alt="系统 - 主页界面" class="rounded-lg shadow-sm w-full h-48 object-cover">
+                            <p class="text-center text-gray-600 mt-2 text-sm">主页</p>
+                        </div>
+                        <div>
+                            <img src="./img/125bfb62-2e9b-455d-b906-bec670bc96d2.png" alt="系统 - 详情页界面" class="rounded-lg shadow-sm w-full h-48 object-cover">
+                            <p class="text-center text-gray-600 mt-2 text-sm">个人监护详情页</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 侧边栏 -->
+            <div class="space-y-6">
+                <!-- 项目信息 -->
+                <div class="bg-white rounded-xl shadow-sm p-6 fade-in">
+                    <h3 class="text-lg font-bold text-dark mb-4">项目信息</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">项目类型</div>
+                            <div class="font-medium">企业管理软件</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">开发周期</div>
+                            <div class="font-medium">长期</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">我的角色</div>
+                            <div class="font-medium">前端开发/组长</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">团队规模</div>
+                            <div class="font-medium">5人</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 操作按钮 -->
+                <div class="bg-white rounded-xl shadow-sm p-6 fade-in">
+                    <div class="space-y-3">
+                        <button class="w-full bg-primary text-white py-2.5 px-4 rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center justify-center">
+                            <a  href="https://github.com/hjw20001030/my-VUE-TS/blob/main/canvas.html" class="fas fa-code mr-2">   查看源码</a>
+                        </button>
+                        <button class="w-full border border-primary text-primary py-2.5 px-4 rounded-lg font-medium hover:bg-primary hover:text-white transition-colors flex items-center justify-center">
+                            <a href="./canvas.html" class="fas fa-external-link-alt mr-2">   在线演示</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-gray-400">© 2026 贺佳伟. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({behavior: 'smooth'});
+                }
+            });
+        });
+    </script>
+</body>
+</html>
